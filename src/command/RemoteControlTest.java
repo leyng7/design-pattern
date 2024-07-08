@@ -6,12 +6,16 @@ public class RemoteControlTest {
         SimpleRemoteControl control = new SimpleRemoteControl();
 
         Light light = new Light();
-        LightOnCommand command = new LightOnCommand(light);
+        LightOnCommand lightOnCommand = new LightOnCommand(light);
+        LightOffCommand lightOffCommand = new LightOffCommand(light);
 
         GarageDoor garageDoor = new GarageDoor();
         GarageDoorOpenCommand garageOpen = new GarageDoorOpenCommand(garageDoor);
 
-        control.setCommand(command);
+        control.setCommand(lightOnCommand);
+        control.buttonWasPressed();
+
+        control.setCommand(lightOffCommand);
         control.buttonWasPressed();
 
         control.setCommand(garageOpen);
