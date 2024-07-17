@@ -32,8 +32,8 @@ public class PancakeHouseMenu {
         menuItems.add(menuItem);
     }
 
-    public List<MenuItem> getMenuItems() {
-        return menuItems;
+    public Iterator createIterator() {
+        return new PancakeHouseIterator(menuItems);
     }
 
     // 기타 메뉴 관련 메소드
